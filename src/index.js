@@ -86,7 +86,9 @@ class ServerlessWebsocketsPlugin {
       if (func.events && func.events.find((event) => event.websocket)) {
         // find the arn of this function in the list of outputs...
         const outputKey = this.provider.naming.getLambdaVersionOutputLogicalId(name)
-        const arn = outputs.find((output) => output.OutputKey === outputKey).OutputValue
+        const arn = outputs.find(({ OutputKey = '' } = {}) =>
+          [outputKey, outputKey.replace('Qualified', '')].includes(OutputKey)
+        ).OutputValue
 
         // get list of route keys configured for this function
         const routes = map((e) => {
