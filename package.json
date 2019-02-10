@@ -26,15 +26,14 @@
     "setup:ci": "bash ./scripts/setup-ci.sh",
     "test": "bash ./scripts/test.sh",
     "test:ci": "bash ./scripts/test-ci.sh",
-    "watch": "bash ./scripts/watch.sh"
+    "watch": "bash ./scripts/watch.sh",
+    "postinstall": "npm run build"
   },
   "dependencies": {
     "@babel/polyfill": "^7.0.0",
     "@serverless/utils": "0.0.20",
     "chalk": "^2.4.1",
-    "source-map-support": "^0.5.5"
-  },
-  "devDependencies": {
+    "source-map-support": "^0.5.5",
     "@babel/cli": "^7.1.5",
     "@babel/core": "^7.1.6",
     "@babel/node": "^7.0.0",
@@ -42,14 +41,16 @@
     "@babel/preset-env": "^7.1.6",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
-    "babel-jest": "^23.6.0",
+    "babel-jest": "^23.6.0"
+  },
+  "devDependencies": {
+    "jest": "^23.6.0",
+    "prettier": "^1.15.2",
     "eslint": "^5.9.0",
     "eslint-config-prettier": "^3.3.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-prettier": "^3.0.0",
-    "eslint-plugin-sort-imports-es6-autofix": "^0.3.0",
-    "jest": "^23.6.0",
-    "prettier": "^1.15.2"
+    "eslint-plugin-sort-imports-es6-autofix": "^0.3.0"
   },
   "publishConfig": {
     "access": "public"
